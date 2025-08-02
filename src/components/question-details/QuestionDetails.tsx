@@ -10,6 +10,7 @@ export const QuestionDetails = ({
 }) => {
   const [id, setId] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState("");
+  const [isCorrect, setIsCorrect] = useState<boolean>();
   const [allVariants, setAllVariants] = useState<string[]>([]);
   const questions = ALL_QUESTIONS_BY_ID.get(collectionsId);
   const question = questions && questions[id];
@@ -43,37 +44,50 @@ export const QuestionDetails = ({
   const selectVariant = (answer: string) => {
     setSelectedAnswer(answer);
     const isCorrect = answer === question?.response[0];
+    setIsCorrect(isCorrect);
 
     if (isCorrect) {
-      setAllVariants([]);
       setTimeout(() => {
-        setId((prevId) => {
-          if (prevId !== questions.length - 1) {
-            return prevId + 1;
-          }
-
-          return 0;
-        });
+        goNextQuestion();
       }, 3000);
     }
   };
 
+  const goNextQuestion = () => {
+    setId((prevId) => {
+      if (prevId !== questions.length - 1) {
+        return prevId + 1;
+      }
+
+      return 0;
+    });
+  };
+
   const correctVariants = [question.response[0]];
 
+  console.log("SELECTED ANSWER: ", selectedAnswer);
+
   return (
-    <div style={{ margin: "0 auto" }}>
+    <div className={styles.test}>
       <div className={styles.question}>{question.question}</div>
-      <div className={styles.selectedAnswer}>{selectedAnswer}</div>
       <div className={styles.variants}>
-        {allVariants.map((v) => (
-          <div
-            key={v}
-            className={styles.variant}
-            onClick={() => selectVariant(v)}
-          >
-            {v}
-          </div>
-        ))}
+        {allVariants.map((v) => {
+          const isSelected = selectedAnswer === v;
+          const className = isSelected
+            ? isCorrect
+              ? styles.correctVariant
+              : styles.unCorrectVariant
+            : styles.variant;
+
+          return (
+            <div key={v} className={className} onClick={() => selectVariant(v)}>
+              {v}
+            </div>
+          );
+        })}
+      </div>
+      <div className={styles.nextButton}>
+        <button onClick={goNextQuestion}>Next</button>
       </div>
     </div>
   );
