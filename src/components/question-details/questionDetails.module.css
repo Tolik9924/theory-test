@@ -1,0 +1,30 @@
+.question {
+  font-size: 32px;
+  text-align: center;
+}
+
+.selectedAnswer {
+  font-size: 24px;
+  text-align: center;
+  width: 70%;
+  height: 100px;
+  margin: 50px auto;
+}
+
+.variants {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.variant {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 25px;
+  cursor: pointer;
+  border-radius: 15px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}

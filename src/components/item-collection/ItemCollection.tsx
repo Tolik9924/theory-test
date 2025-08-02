@@ -1,16 +1,23 @@
+import styles from "./item.module.css";
+
 type Collection = {
   id: string;
   title: string;
-  subtitle: string;
-  level: string;
-  category: string[];
-  learnByInterest: string;
-  learnBySkill: string;
-  learningStyle: string;
-  topic: string[];
 };
 
-export const ItemCollection = ({ collection }: { collection: Collection }) => {
-  console.log("COLLECTION: ", collection);
-  return <div>Item Collection: {collection.title}</div>;
+export const ItemCollection = ({
+  collection,
+  setCollection,
+}: {
+  collection: Collection;
+  setCollection: any;
+}) => {
+  return (
+    <div
+      className={styles.collection}
+      onClick={() => setCollection(collection)}
+    >
+      {collection.title}
+    </div>
+  );
 };

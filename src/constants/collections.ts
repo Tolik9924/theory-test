@@ -1,9 +1,10 @@
-import { questionId_1, questionId_2, questionId_3 } from './questionData';
+import { questionId_1, questionId_3 } from './questionData';
+import { REACT_JS } from './react';
 
 export const ALL_QUESTIONS_BY_ID = new Map([
-	['1', questionId_1],
-	['2', questionId_2],
-	['3', questionId_3],
+	//['1', questionId_1],
+	['2', REACT_JS],
+	//['3', questionId_3],
 	// ['4', questionId_4],
 ]);
 
