@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Tolik9924/theory-test/static/css/main.63b84a8d.css",
+    "main.js": "/Tolik9924/theory-test/static/js/main.de748b5c.js",
+    "static/js/453.470c5e71.chunk.js": "/Tolik9924/theory-test/static/js/453.470c5e71.chunk.js",
+    "index.html": "/Tolik9924/theory-test/index.html",
+    "main.63b84a8d.css.map": "/Tolik9924/theory-test/static/css/main.63b84a8d.css.map",
+    "main.de748b5c.js.map": "/Tolik9924/theory-test/static/js/main.de748b5c.js.map",
+    "453.470c5e71.chunk.js.map": "/Tolik9924/theory-test/static/js/453.470c5e71.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.63b84a8d.css",
+    "static/js/main.de748b5c.js"
+  ]
+}
