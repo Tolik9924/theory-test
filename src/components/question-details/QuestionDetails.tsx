@@ -49,7 +49,7 @@ export const QuestionDetails = ({
     if (isCorrect) {
       setTimeout(() => {
         goNextQuestion();
-      }, 3000);
+      }, 1000);
     }
   };
 
@@ -64,8 +64,6 @@ export const QuestionDetails = ({
   };
 
   const correctVariants = [question.response[0]];
-
-  console.log("SELECTED ANSWER: ", selectedAnswer);
 
   return (
     <div className={styles.test}>
